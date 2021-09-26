@@ -45,6 +45,8 @@ task hello {
 
 sonarqube {
 	properties {
+		property "sonar.projectName", "Demo Project"
+		property 'sonar.projectKey', 'Jenkins-Sonar'
 		property 'sonar.host.url', 'http://localhost:9000'
 		property 'sonar.login', '0b022b6fe8fde733e7e9ab93914bc6427b26c2f6'
 	}
