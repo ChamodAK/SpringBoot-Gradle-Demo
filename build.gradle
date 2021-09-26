@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.5.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'jacoco'
+	id 'org.sonarqube' version '3.3'
 }
 
 group = 'com.example'
@@ -14,13 +16,38 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+	implementation 'junit:junit:4.13.2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
+
+}
+
+jacoco {
+	toolVersion = "0.8.5"
+	//noinspection GrDeprecatedAPIUsage
+	reportsDir = file("$buildDir/jacoco")
 }
 
 test {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+	dependsOn test
+	reports {
+		xml.enabled true
+	}
 }
 
 task hello {
 	println 'tutorialspoint. this is modified againnn shit'
 }
+
+sonarqube {
+	properties {
+		property 'sonar.host.url', 'http://localhost:9000'
+		property 'sonar.login', '0b022b6fe8fde733e7e9ab93914bc6427b26c2f6'
+	}
+}
+
+tasks.sonarqube.dependsOn jacocoTestReport
