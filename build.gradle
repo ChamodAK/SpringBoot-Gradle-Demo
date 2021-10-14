@@ -60,4 +60,4 @@ tasks.sonarqube.dependsOn jacocoTestReport
 
 //this is from another fix = 30;
 
-//this is changed by someone
+//this is changed by someone else
