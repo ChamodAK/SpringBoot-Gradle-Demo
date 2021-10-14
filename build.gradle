@@ -15,9 +15,9 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
 	implementation 'junit:junit:4.13.2'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
 
 }
 
@@ -55,3 +55,5 @@ sonarqube {
 tasks.sonarqube.dependsOn jacocoTestReport
 
 // Newly Added Feature
+
+//sonar fixes - part 01
