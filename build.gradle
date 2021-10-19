@@ -17,7 +17,16 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
 	implementation 'junit:junit:4.13.2'
+	implementation 'mysql:mysql-connector-java:8.0.25'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.4'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
+
+
+
 
 }
 
@@ -53,16 +62,3 @@ sonarqube {
 }
 
 tasks.sonarqube.dependsOn jacocoTestReport
-
-// Newly Added Feature
-
-//sonar fixes - part 01
-
-//this is from another fix = 30;
-
-//this is changed by someone else
-
-
-// this is by me
-
-//little change 2
